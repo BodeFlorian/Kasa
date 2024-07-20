@@ -2,6 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
+import GlobalStyle from './utils/style/GlobalStyle'
+
+import Header from './components/Header'
+
 import Home from './pages/Home'
 import FicheLogement from './pages/FicheLogement'
 import About from './pages/About'
@@ -11,6 +15,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
     <Router>
+      <GlobalStyle />
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/logement/:idLogement" element={<FicheLogement />} />

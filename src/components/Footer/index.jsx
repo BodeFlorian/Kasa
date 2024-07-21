@@ -9,6 +9,7 @@ const StyledFooter = styled.div`
   align-items: center;
   gap: 24px;
   padding: 64px;
+  margin-top: 100px;
 
   p {
     color: #fff;

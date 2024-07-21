@@ -36,7 +36,7 @@ function Header() {
   return (
     <StyledHeader>
       <NavLink to="/">
-        <Logo src={logo} />
+        <Logo src={logo} alt="Kasa Logo" />
       </NavLink>
 
       <ul>

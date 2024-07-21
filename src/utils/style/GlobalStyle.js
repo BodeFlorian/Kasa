@@ -6,7 +6,11 @@ const GlobalStyle = createGlobalStyle`
         padding: 0 100px;
         margin: auto;
         font-family: 'Montserrat', sans-serif;
-    }   
+    }
+
+    li{
+        list-style: none;
+    }
 
     a {
         color: inherit;

@@ -41,12 +41,18 @@ function Header() {
 
       <ul>
         <li>
-          <StyledLink to="/" activeClassName="active">
+          <StyledLink
+            to="/"
+            className={({ isActive }) => (isActive ? 'active' : '')}
+          >
             Accueil
           </StyledLink>
         </li>
         <li>
-          <StyledLink to="/about" activeClassName="active">
+          <StyledLink
+            to="/about"
+            className={({ isActive }) => (isActive ? 'active' : '')}
+          >
             À propos
           </StyledLink>
         </li>

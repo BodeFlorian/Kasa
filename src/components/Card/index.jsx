@@ -27,6 +27,7 @@ const StyledCard = styled.article`
     font-size: 18px;
     font-weight: 800;
     color: #fff;
+    z-index: 1;
   }
 
   &:hover {
@@ -36,13 +37,23 @@ const StyledCard = styled.article`
   }
 `
 
+const StyledLink = styled(Link)`
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+  text-decoration: none;
+  z-index: 0;
+`
+
 function Card({ idLogement, picture, title }) {
   return (
     <StyledCard>
-      <Link to={`${'/location/' + idLogement}`}>
-        <img src={picture} alt={title ? title : 'Titre de la location'} />
+      <img src={picture} alt={title ? title : 'Titre de la location'} />
+      <StyledLink to={`/location/${idLogement}`}>
         <span>{title ? title : 'Titre de la location'}</span>
-      </Link>
+      </StyledLink>
     </StyledCard>
   )
 }

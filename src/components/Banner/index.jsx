@@ -31,7 +31,7 @@ const StyledBanner = styled.div`
     color: #fff;
     text-align: center;
     font-weight: 800;
-    font-size: 48px;
+    font-size: 32px;
     z-index: 1;
   }
 `

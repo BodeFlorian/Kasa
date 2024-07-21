@@ -3,11 +3,17 @@ import { createGlobalStyle } from 'styled-components'
 const GlobalStyle = createGlobalStyle`
     html,
     body {
+        margin: 0;
         padding: 0 100px;
-        margin: auto;
         font-family: 'Montserrat', sans-serif;
     }
 
+    #root{
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    
     li{
         list-style: none;
     }
@@ -19,6 +25,8 @@ const GlobalStyle = createGlobalStyle`
 
     * {
         box-sizing: border-box;
+        margin: 0;
+        padding: 0;
     }
 `
 

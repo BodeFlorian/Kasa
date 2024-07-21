@@ -14,12 +14,13 @@ const StyledHome = styled.div`
   flex-direction: column;
   gap: 48px;
   margin-bottom: 64px;
+  flex: 1;
 `
 
 const StyledLogements = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 32px;
 `
 
 function Home() {
@@ -28,7 +29,7 @@ function Home() {
       <Banner texte="Chez vous, partout et ailleurs" picture={banner1} />
 
       <StyledLogements>
-        {logements.map((logement) => (
+        {logements.slice(0, 6).map((logement) => (
           <Card
             key={logement.id}
             idLogement={logement.id}

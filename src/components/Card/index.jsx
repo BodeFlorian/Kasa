@@ -51,7 +51,7 @@ function Card({ idLogement, picture, title }) {
   return (
     <StyledCard>
       <img src={picture} alt={title ? title : 'Titre de la location'} />
-      <StyledLink to={`/location/${idLogement}`}>
+      <StyledLink to={`/logement/${idLogement}`}>
         <span>{title ? title : 'Titre de la location'}</span>
       </StyledLink>
     </StyledCard>

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Banner from '../../components/Banner'
 import Card from '../../components/Card'
 
-import useFetch from '../../utils/hooks/useFetch'
+import { useLogements } from '../../utils/context/useLogements'
 
 import banner1 from '../../assets/img/Banner/banner1.png'
 
@@ -23,11 +23,7 @@ const StyledLogements = styled.div`
 `
 
 function Home() {
-  const {
-    data: logements,
-    isLoading,
-    error,
-  } = useFetch('/datas/logements.json')
+  const { logements, isLoading, error } = useLogements()
 
   return (
     <StyledHome>

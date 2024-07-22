@@ -12,18 +12,22 @@ import FicheLogement from './pages/FicheLogement'
 import About from './pages/About'
 import Error from './pages/Error'
 
+import { LogementsProvider } from './utils/context/useLogements'
+
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
     <Router>
       <GlobalStyle />
       <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/logement/:idLogement" element={<FicheLogement />} />
-        <Route path="/about" element={<About />} />
-        <Route path="*" element={<Error />} />
-      </Routes>
+      <LogementsProvider>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/logement/:idLogement" element={<FicheLogement />} />
+          <Route path="/about" element={<About />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
+      </LogementsProvider>
       <Footer />
     </Router>
   </React.StrictMode>,

@@ -37,6 +37,7 @@ const StyledCollapse = styled.div`
     &__content {
       padding: 16px;
       overflow: hidden;
+      line-height: 150%;
 
       > * {
         transition:

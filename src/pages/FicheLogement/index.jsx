@@ -1,10 +1,12 @@
+import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import styled from 'styled-components'
 
 import { useLogements } from '../../utils/context/useLogements'
 
-import Collapse from '../../components/Collapse'
+import Slideshow from '../../components/Slideshow'
 import Rating from '../../components/Rating'
+import Collapse from '../../components/Collapse'
 
 const StyledLogement = styled.div`
   flex: 1;
@@ -79,6 +81,10 @@ function FicheLogement() {
   const { idLogement } = useParams()
   const { logements, isLoading, error } = useLogements()
 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   if (isLoading) {
     return <StyledLogement>Loading...</StyledLogement>
   }
@@ -99,6 +105,7 @@ function FicheLogement() {
 
   return (
     <StyledLogement>
+      <Slideshow pictures={logement.pictures} />
       <div className="logement">
         <div className="logement__main">
           <div className="logement__details">

@@ -45,6 +45,7 @@ const StyledCollapse = styled.div`
           transform 0.3s ease-in-out,
           opacity 0.3s ease-in-out;
         height: ${({ $isOpen }) => ($isOpen ? 'auto' : '0')};
+        margin-bottom: ${({ $isOpen }) => ($isOpen ? '16px' : '0')};
         visibility: ${({ $isOpen }) => ($isOpen ? 'visible' : 'hidden')};
         opacity: ${({ $isOpen }) => ($isOpen ? '1' : '0')};
         transform: translateY(${({ $isOpen }) => ($isOpen ? '0' : '-50%')});

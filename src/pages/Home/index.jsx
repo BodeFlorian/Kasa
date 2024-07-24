@@ -42,7 +42,7 @@ function Home() {
                 <Card
                   key={logement.id}
                   idLogement={logement.id}
-                  picture={logement.pictures[0]}
+                  picture={logement.cover}
                   title={logement.title}
                 />
               ))}

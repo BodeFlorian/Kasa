@@ -35,13 +35,19 @@ const StyledCollapse = styled.div`
     }
 
     &__content {
-      transition:
-        transform 0.3s ease-in-out,
-        opacity 0.3s ease-in-out;
-      visibility: ${({ $isOpen }) => ($isOpen ? 'visible' : 'hidden')};
-      opacity: ${({ $isOpen }) => ($isOpen ? '1' : '0')};
-      transform: translateY(${({ $isOpen }) => ($isOpen ? '0' : '-50%')});
       padding: 16px;
+      overflow: hidden;
+
+      > * {
+        transition:
+          height 0.3s ease-in-out,
+          transform 0.3s ease-in-out,
+          opacity 0.3s ease-in-out;
+        height: ${({ $isOpen }) => ($isOpen ? 'auto' : '0')};
+        visibility: ${({ $isOpen }) => ($isOpen ? 'visible' : 'hidden')};
+        opacity: ${({ $isOpen }) => ($isOpen ? '1' : '0')};
+        transform: translateY(${({ $isOpen }) => ($isOpen ? '0' : '-50%')});
+      }
     }
   }
 `

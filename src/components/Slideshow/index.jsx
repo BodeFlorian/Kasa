@@ -13,6 +13,12 @@ const StyledSlideshow = styled.div`
   position: relative;
   border-radius: 16px;
   overflow: hidden;
+
+  .img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
 `
 
 const Arrow = styled.div`
@@ -23,38 +29,42 @@ const Arrow = styled.div`
   width: 64px;
   height: 64px;
   cursor: pointer;
+  z-index: 1;
 
-  &.arrow {
-    &-left {
-      left: 0;
-      transform: translateY(-50%) rotate(-90deg);
-    }
+  &.arrow-left {
+    left: 0;
+    transform: translateY(-50%) rotate(-90deg);
+  }
 
-    &-right {
-      right: 0;
-      transform: translateY(-50%) rotate(90deg);
-    }
+  &.arrow-right {
+    right: 0;
+    transform: translateY(-50%) rotate(90deg);
   }
 `
 
-const ImageContainer = styled.div`
+const Image = styled.img`
+  position: absolute;
   width: 100%;
   height: 100%;
-  background-image: url(${(props) => props.src});
-  background-size: cover;
-  background-position: center;
-  transition: background-image 0.5s ease-in-out;
+  object-fit: cover;
+  transform: ${(props) => (props.$isVisible ? '' : 'translateX(100%)')};
+  visibility: ${(props) => (props.$isVisible ? 'visible' : 'hidden')};
+  opacity: ${(props) => (props.$isVisible ? '1' : '0')};
+  transition:
+    transform 0.5s ease-in-out,
+    visibility 0.5s ease-in-out,
+    opacity 0.5s ease-in-out;
 `
 
 function Slideshow({ pictures }) {
   const [index, setIndex] = useState(0)
   const length = pictures.length - 1
 
-  const handlePrev = (e) => {
+  const handlePrev = () => {
     setIndex(index === 0 ? length : index - 1)
   }
 
-  const handleNext = (e) => {
+  const handleNext = () => {
     setIndex(index === length ? 0 : index + 1)
   }
 
@@ -66,7 +76,11 @@ function Slideshow({ pictures }) {
           <Arrow className="arrow-right" onClick={handleNext} />
         </>
       )}
-      <ImageContainer src={pictures[index]} />
+      <div className="img">
+        {pictures.map((pic, idx) => (
+          <Image key={`image-${idx}`} src={pic} $isVisible={index === idx} />
+        ))}
+      </div>
     </StyledSlideshow>
   )
 }

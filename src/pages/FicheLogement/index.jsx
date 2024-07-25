@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 
 import { useLogements } from '../../utils/context/useLogements'
@@ -80,10 +80,20 @@ const StyledLogement = styled.div`
 function FicheLogement() {
   const { idLogement } = useParams()
   const { logements, isLoading, error } = useLogements()
+  const navigate = useNavigate()
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
+
+  useEffect(() => {
+    if (!isLoading && logements) {
+      const logement = logements.find((el) => el.id === idLogement)
+      if (!logement) {
+        navigate('/')
+      }
+    }
+  }, [isLoading, logements, idLogement, navigate])
 
   if (isLoading) {
     return <StyledLogement>Loading...</StyledLogement>
@@ -98,7 +108,7 @@ function FicheLogement() {
     : null
 
   if (!logement) {
-    return <StyledLogement>Logement not found</StyledLogement>
+    return null
   }
 
   const [firstName, lastName] = logement.host.name.split(' ', 2)
@@ -120,7 +130,7 @@ function FicheLogement() {
             </span>
             <img
               src={logement.host.picture}
-              alt=""
+              alt={`${firstName} ${lastName}`}
               className="logement__host-picture"
             />
           </div>

@@ -46,7 +46,7 @@ function Home() {
         <StyledLogements>
           {logements &&
             logements
-              .slice(0, 6)
+              //.slice(0, 6)
               .map((logement) => (
                 <Card
                   key={logement.id}

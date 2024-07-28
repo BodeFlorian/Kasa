@@ -80,7 +80,7 @@ function Slideshow({ pictures }) {
 
   return (
     <StyledSlideshow>
-      {length >= 0 && (
+      {length > 1 && (
         <>
           <Arrow className="arrow-left" onClick={handlePrev} />
           <Arrow className="arrow-right" onClick={handleNext} />

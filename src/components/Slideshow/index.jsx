@@ -19,6 +19,11 @@ const StyledSlideshow = styled.div`
     width: 100%;
     height: 100%;
   }
+
+  @media screen and (max-width: 480px) {
+    height: 40vh;
+    aspect-ratio: 1;
+  }
 `
 
 const Arrow = styled.div`
@@ -39,6 +44,11 @@ const Arrow = styled.div`
   &.arrow-right {
     right: 0;
     transform: translateY(-50%) rotate(90deg);
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 32px;
+    height: 32px;
   }
 `
 

@@ -49,6 +49,14 @@ const StyledCollapse = styled.div`
         visibility: ${({ $isOpen }) => ($isOpen ? 'visible' : 'hidden')};
         opacity: ${({ $isOpen }) => ($isOpen ? '1' : '0')};
         transform: translateY(${({ $isOpen }) => ($isOpen ? '0' : '-50%')});
+
+        @media screen and (max-width: 480px) {
+          padding: ${({ $isOpen }) => ($isOpen ? '16px' : '0')};
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        padding: 0;
       }
     }
   }

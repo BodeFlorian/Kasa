@@ -35,6 +35,11 @@ const StyledCard = styled.article`
       transform: scale(1.04);
     }
   }
+
+  @media screen and (max-width: 480px) {
+    aspect-ratio: 4/3;
+    border-radius: 12px;
+  }
 `
 
 const StyledLink = styled(Link)`

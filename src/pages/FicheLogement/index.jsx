@@ -24,6 +24,12 @@ const StyledLogement = styled.div`
       display: flex;
       justify-content: space-between;
       align-items: center;
+
+      @media screen and (max-width: 480px) {
+        flex-direction: column;
+        align-items: unset;
+        gap: 16px;
+      }
     }
 
     &__details {
@@ -51,6 +57,10 @@ const StyledLogement = styled.div`
         height: 72px;
         object-fit: cover;
       }
+
+      @media screen and (max-width: 480px) {
+        display: none;
+      }
     }
 
     &__tags {
@@ -74,6 +84,10 @@ const StyledLogement = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
+
+    @media screen and (max-width: 480px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 `
 

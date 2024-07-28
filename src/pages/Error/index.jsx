@@ -13,18 +13,31 @@ const StyledError = styled.div`
     font-size: 256px;
     font-weight: 800;
     color: #ff6060;
+
+    @media screen and (max-width: 480px) {
+      font-size: 96px;
+    }
   }
 
   p {
     font-size: 32px;
     font-weight: 600;
     color: #ff6060;
+
+    @media screen and (max-width: 480px) {
+      font-size: 18px;
+      text-align: center;
+    }
   }
 
   a {
     text-decoration: underline;
     font-size: 18px;
     font-weight: 600;
+
+    @media screen and (max-width: 480px) {
+      font-size: 14px;
+    }
   }
 `
 

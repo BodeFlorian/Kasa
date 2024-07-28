@@ -14,12 +14,21 @@ const StyledHome = styled.div`
   flex-direction: column;
   gap: 48px;
   flex: 1;
+
+  @media screen and (max-width: 480px) {
+    gap: 24px;
+  }
 `
 
 const StyledLogements = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
+
+  @media screen and (max-width: 480px) {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 24px;
+  }
 `
 
 function Home() {

@@ -11,6 +11,18 @@ const StyledAbout = styled.div`
   display: flex;
   flex-direction: column;
   gap: 48px;
+
+  @media screen and (max-width: 480px) {
+    gap: 24px;
+  }
+
+  .about {
+    @media screen and (max-width: 480px) {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
 `
 
 function About() {

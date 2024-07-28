@@ -1,11 +1,18 @@
 import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
-    html,
     body {
         margin: 0;
         padding: 0 100px;
         font-family: 'Montserrat', sans-serif;
+
+        @media screen and (max-width: 1440px) {
+            padding: 0 50px;
+        }
+
+        @media screen and (max-width: 1024px) {
+            padding: 0 20px;
+        }
     }
 
     #root{
@@ -25,8 +32,8 @@ const GlobalStyle = createGlobalStyle`
 
     * {
         box-sizing: border-box;
-        margin: 0;
-        padding: 0;
+        margin: 0 0;
+        padding: 0 0;
     }
 `
 

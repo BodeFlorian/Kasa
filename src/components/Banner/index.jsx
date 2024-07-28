@@ -33,6 +33,19 @@ const StyledBanner = styled.div`
     font-weight: 800;
     font-size: 32px;
     z-index: 1;
+
+    @media screen and (max-width: 480px) {
+      font-size: 24px;
+      text-align: left;
+      width: 75%;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    justify-content: unset;
+    padding: 16px;
+    height: 14vh;
+    border-radius: 12px;
   }
 `
 

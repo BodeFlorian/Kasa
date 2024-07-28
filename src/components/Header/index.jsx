@@ -11,12 +11,32 @@ const StyledHeader = styled.div`
   ul {
     display: flex;
     gap: 64px;
+
+    @media screen and (max-width: 1024px) {
+      gap: 32px;
+    }
+
+    @media screen and (max-width: 768px) {
+      gap: 24px;
+    }
+
+    @media screen and (max-width: 480px) {
+      gap: 16px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    padding: 24px 0;
   }
 `
 
 const Logo = styled.img`
   width: 200px;
   object-fit: cover;
+
+  @media screen and (max-width: 1024px) {
+    width: 140px;
+  }
 `
 
 const StyledLink = styled(NavLink)`
@@ -29,6 +49,19 @@ const StyledLink = styled(NavLink)`
 
   &:hover {
     text-decoration: underline;
+  }
+
+  @media screen and (max-width: 1024px) {
+    font-size: 18px;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 12px;
   }
 `
 

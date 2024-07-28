@@ -14,6 +14,14 @@ const StyledFooter = styled.div`
   p {
     color: #fff;
     font-size: 24px;
+
+    @media screen and (max-width: 480px) {
+      font-size: 12px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    margin-top: 24px;
   }
 `
 

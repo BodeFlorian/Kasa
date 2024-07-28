@@ -18,6 +18,16 @@ const StyledSlideshow = styled.div`
     position: relative;
     width: 100%;
     height: 100%;
+
+    &__length {
+      position: absolute;
+      color: #fff;
+      bottom: 16px;
+      font-size: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+    }
   }
 
   @media screen and (max-width: 480px) {
@@ -84,6 +94,9 @@ function Slideshow({ pictures }) {
         <>
           <Arrow className="arrow-left" onClick={handlePrev} />
           <Arrow className="arrow-right" onClick={handleNext} />
+          <div className="img__length">
+            <p>{`${index + 1 + '/' + (length + 1)}`}</p>
+          </div>
         </>
       )}
       <div className="img">
